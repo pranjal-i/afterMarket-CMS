@@ -2,6 +2,7 @@ import type { CollectionConfig } from 'payload'
 import { authenticated } from '../../access/authenticated'
 import { anyone } from '@/access/anyone'
 import { userCreatePublic } from '@/access/anyUserCreate'
+import { RoleNames } from '@/constants'
 
 export const Users: CollectionConfig = {
   slug: 'users',
@@ -38,22 +39,22 @@ export const Users: CollectionConfig = {
       options: [
         {
           label: 'Editor',
-          value: 'editor',
+          value: RoleNames.Editor,
         },
         {
           label: 'Reviewer',
-          value: 'reviewer',
+          value: RoleNames.Reviewer,
         },
         {
           label: 'Admin',
-          value: 'admin',
+          value: RoleNames.Admin,
         },
         {
           label: 'Superadmin',
-          value: 'superadmin',
+          value: RoleNames.SuperAdmin,
         },
       ],
-      defaultValue: 'editor',
+      defaultValue: RoleNames.Editor,
       required: true,
     }
   ],
