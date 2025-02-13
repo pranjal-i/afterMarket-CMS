@@ -145,6 +145,8 @@ export interface Page {
     description?: string | null;
   };
   publishedAt?: string | null;
+  reviewersComment?: string | null;
+  status?: string | null;
   slug?: string | null;
   slugLock?: boolean | null;
   updatedAt: string;
@@ -318,17 +320,11 @@ export interface Category {
 export interface User {
   id: number;
   name?: string | null;
+  email: string;
   password?: string | null;
   role: 'editor' | 'reviewer' | 'admin' | 'superadmin';
   updatedAt: string;
   createdAt: string;
-  email: string;
-  resetPasswordToken?: string | null;
-  resetPasswordExpiration?: string | null;
-  salt?: string | null;
-  hash?: string | null;
-  loginAttempts?: number | null;
-  lockUntil?: string | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -970,6 +966,8 @@ export interface PagesSelect<T extends boolean = true> {
         description?: T;
       };
   publishedAt?: T;
+  reviewersComment?: T;
+  status?: T;
   slug?: T;
   slugLock?: T;
   updatedAt?: T;
@@ -1210,17 +1208,11 @@ export interface CategoriesSelect<T extends boolean = true> {
  */
 export interface UsersSelect<T extends boolean = true> {
   name?: T;
+  email?: T;
   password?: T;
   role?: T;
   updatedAt?: T;
   createdAt?: T;
-  email?: T;
-  resetPasswordToken?: T;
-  resetPasswordExpiration?: T;
-  salt?: T;
-  hash?: T;
-  loginAttempts?: T;
-  lockUntil?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

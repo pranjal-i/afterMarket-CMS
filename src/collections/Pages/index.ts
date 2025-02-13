@@ -20,6 +20,7 @@ import {
   OverviewField,
   PreviewField,
 } from '@payloadcms/plugin-seo/fields'
+import { RoleNames } from '@/constants'
 
 export const Pages: CollectionConfig<'pages'> = {
   slug: 'pages',
@@ -116,6 +117,22 @@ export const Pages: CollectionConfig<'pages'> = {
     {
       name: 'publishedAt',
       type: 'date',
+      admin: {
+        position: 'sidebar',
+      },
+    },
+    {
+      name: 'reviewersComment',
+      label: 'Reviewer\'s Comment',
+      type: 'textarea',
+      admin: {
+        position: 'sidebar',
+      },
+    },
+    {
+      name: 'status',
+      label: 'Status',
+      type: 'text',
       admin: {
         position: 'sidebar',
       },
